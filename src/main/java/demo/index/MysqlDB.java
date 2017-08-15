@@ -25,8 +25,8 @@ public class MysqlDB {
     }
     public  String getName(String dburl,String sqll){
         Connection conn = null;
-        String sql=sqll;
         String url = dburl;
+        String sql=sqll;
         String names="";
 //        sql = "select * from test1";
         try {

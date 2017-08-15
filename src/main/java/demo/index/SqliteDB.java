@@ -12,15 +12,16 @@ public class SqliteDB {
         SqliteDB sqliteDB = new SqliteDB();
         System.out.println(sqliteDB.getNames(dbsql,sql));
     }
+
 public String getNames(String dbsql, String sqll){
-    String sql="jdbc:sqlite://"+sqll;
+    String dburl="jdbc:sqlite://"+dbsql;
     Connection conn=null;
     Statement stat;
-    ResultSet rs = null;
+    ResultSet rs;
     String names="";
     try {
         Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection(sql);
+        conn = DriverManager.getConnection(dburl);
         stat = conn.createStatement();
         rs = stat.executeQuery(sqll);
         while (rs.next()) {
