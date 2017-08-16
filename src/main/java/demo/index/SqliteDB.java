@@ -7,14 +7,14 @@ import java.sql.*;
  */
 public class SqliteDB {
     public static void main(String[] args) {
-        String dbsql = "D:\\IdeaProjects\\test0815\\src\\main\\resources\\sqliteDB.db3";
+        String dbsql = "build/resources/main/sqliteDB.db3";
         String sql="select * from simple_user;";
         SqliteDB sqliteDB = new SqliteDB();
         System.out.println(sqliteDB.getNames(dbsql,sql));
     }
 
 public String getNames(String dbsql, String sqll){
-    String dburl="jdbc:sqlite://"+dbsql;
+    String dburl="jdbc:sqlite:"+dbsql;
     Connection conn=null;
     Statement stat;
     ResultSet rs;
