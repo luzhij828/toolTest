@@ -4,13 +4,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import tool.DBImpl;
-import tool.DBMysql;
-import tool.DBSqlite;
 import tool.Log;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+
 import java.sql.ResultSet;
 import java.util.Properties;
 
