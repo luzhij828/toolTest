@@ -16,7 +16,6 @@ import java.util.Map;
 public class Email21cn {
     static Map<String,String> ck = new HashMap<>();
     static Map<String,String> user = new HashMap<>();
-    static Map<String,String> user1 = new HashMap<>();
 
     public static void main(String[] args) {
         user.put("accountType","02");
@@ -35,7 +34,6 @@ public class Email21cn {
 //            String url1 = "http://open.e.189.cn/api/common/needcaptcha.do?appId=8013411507";
 //            Connection conn1 = Jsoup.connect(url1).ignoreContentType(true).method(Method.POST).cookies(ck).data(user).timeout(6000);
 //            System.out.println(conn1.execute().body());
-
 
 
 //            String url = "https://open.e.189.cn/api/common/loginSubmit.do";

@@ -1,14 +1,7 @@
-package main;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import tool.DBImpl;
-import tool.Log;
+package tool;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
-
 import java.sql.ResultSet;
 import java.util.Properties;
 
@@ -16,7 +9,7 @@ public class MainTest {
 
     DBImpl db;
 
-    @Before
+
     public void before(){
 
         String url = "";
@@ -43,7 +36,7 @@ public class MainTest {
 
     }
 
-    @Test
+
     public void TestSqlite() throws Exception{
         ResultSet result = db.queryAll("select name from simple_user");
         while(result.next()){
@@ -52,7 +45,7 @@ public class MainTest {
         Log.log("###########finish#############");
     }
 
-    @After
+
     public void after(){
         db.close();
     }
