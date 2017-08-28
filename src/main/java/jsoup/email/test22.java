@@ -47,6 +47,7 @@ public class test22{
         //这里就是将响应正文转换成DOM树
         //之后用到的节奏和jquery差不多
         Document d1 =Jsoup.parse(body);
+
         Elements list1 = d1.select("div.area-half.left>div.tabBox>div.tabContents").get(0).select("table>tbody>tr>td>a");;
 //    	Elements list2 = list1.get(1).select("");
         int i=0;
@@ -59,6 +60,9 @@ public class test22{
         System.out.println(i);
     }
 
+
+
+    //解析json响应数据
     public static void getJson(){
         String json1 = "{\"user\":[{\"name\":\"张三\",\"age\":12},{\"name\":\"张四\",\"age\":13}]}";
 
