@@ -22,6 +22,7 @@ public class getBaidu {
         //百度测试DOM获取a
 //        getDom1();
         //测试选择器1
+        //选择器2是组合
         getSelect2();
 
 
@@ -107,7 +108,7 @@ public class getBaidu {
             e.printStackTrace();
         }
     }
-    //用selector
+    //用selector2组合方法
     public static void getSelect2(){
         try {
             Document doc =  Jsoup.connect("http://news.baidu.com/").get();

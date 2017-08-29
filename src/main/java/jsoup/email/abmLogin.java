@@ -23,11 +23,14 @@ public class abmLogin {
         //第一次请求---加载登录页面获得一部分cookie，和参数
         String url1 = "http://172.16.248.4/user/login";
         Connection conn1 = Jsoup.connect(url1).method(Method.GET).ignoreContentType(true);
+
         conn1.header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0");
+
         //发送请求获得响应信息
         Response rs1 = conn1.execute();
-        //获取响应cookie
+        //获取响应cookies
         cookie.putAll(rs1.cookies());
+
         //设置参数信息
         data1.put("_csrf",cookie.get("_csrf"));
         data1.put("user_name","364460369@qq.com");
@@ -46,6 +49,8 @@ public class abmLogin {
 //            System.out.println(h1.get(k));
 //        }
         cookie.putAll(rs2.cookies());
+
+
 
         //第三次请求---进入主页
         String url3 = "http://172.16.248.4/";
