@@ -26,7 +26,7 @@ public class getBaidu {
         getSelect2();
 
 
-        //
+        //下载网页中的图片
 //        getIMG();
 
     }
@@ -55,6 +55,7 @@ public class getBaidu {
             URL url = new URL("http:"+imgurl);
             // 获得连接
             URLConnection connection = url.openConnection();
+
             // 设置10秒的相应时间connection.setConnectTimeout(10 * 1000);
             // 获得输入流
             InputStream in = connection.getInputStream();
