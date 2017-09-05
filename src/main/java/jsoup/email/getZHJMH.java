@@ -13,7 +13,7 @@ import java.io.*;
  * Created by luzhijie on 2017/9/4.
  */
 public class getZHJMH {
-    static String zhangjie="";
+    static String zhangjie = "";
     static String path = "H:\\游戏\\zhenhunjie\\";
     public static void main(String[] args) {
         //这里便是一个兴趣实例，将一整部漫画下载下来，
