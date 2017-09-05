@@ -9,7 +9,7 @@ import org.jsoup.Jsoup;
 import java.io.*;
 
 
-/**这是我将一整部漫画下载下来的栗子
+/**这是我将一整部漫画下载下来的栗子---完成
  * Created by luzhijie on 2017/9/4.
  */
 public class getZHJMH {
@@ -43,7 +43,7 @@ public class getZHJMH {
         JSONArray list1 = j1.getJSONObject("data").getJSONArray("jpgList");
         zhangjie = path+j1.getJSONObject("data").getJSONObject("info").getString("itemName");
 
-        System.out.println("zhangjie:::"+zhangjie);
+//        System.out.println("zhangjie:::"+zhangjie);
 
         if(zhangjie!=null||!(zhangjie.equals(""))){
             File file1 = new File(zhangjie);
@@ -62,7 +62,7 @@ public class getZHJMH {
 
 
     }
-
+//将图片下载到本地
     public static void getImg(String imgurl ,String imgname){
         try {
             File file = new File(zhangjie+"\\"+imgname);
@@ -94,3 +94,4 @@ public class getZHJMH {
 
     }
 }
+
