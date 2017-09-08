@@ -23,9 +23,11 @@ public class getZHJMH {
         //还有一个意外发现，我们可以“绕过”这个网站的VIP--（是他们网站漏洞）
 
         //目前章节只是到了194
-        for (int i=1;i<3;i++) {
+        for (int i=193;i<195;i++) {
             String url = "http://www.migudm.cn/opus/webQueryWatchOpusInfo.html?hwOpusId=000000014934&index="+i+"&opusType=2";
             Connection conn = Jsoup.connect(url).ignoreContentType(true).method(Method.GET).timeout(6000);
+            conn.header("Accept","application/json, text/javascript, */*; q=0.01");
+            conn.header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0");
 
             try {
                 Response rs = conn.execute();

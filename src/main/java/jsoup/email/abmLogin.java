@@ -46,11 +46,7 @@ public class abmLogin {
         Connection conn2 = Jsoup.connect(url2).cookies(cookie).data(data1).method(Method.POST).ignoreContentType(true);
         conn2.header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0");
         Response rs2 = conn2.execute();
-        //响应头，
-//        Map<String,String> h1=rs2.headers();
-//        for (String k:h1.keySet()){
-//            System.out.println(h1.get(k));
-//        }
+        //获取cookie信息
         cookie.putAll(rs2.cookies());
 
 
@@ -58,7 +54,6 @@ public class abmLogin {
         //第三次请求---进入主页
         String url3 = "http://172.16.248.4/";
         Document conn3 = Jsoup.connect(url3).cookies(cookie).get();
-
 
         Elements list1 = conn3.select("div.ui.fifteen.wide.column>div.push.news");
         for (int i=0;i<list1.size();i++){
