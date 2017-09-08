@@ -32,11 +32,12 @@ public class test22{
 //            conn.header("Connection","keep-alive");
 //            conn.header("Accept-Encoding","gzip, deflate, br");
 
-            //响应回来的数据，带有响应头的哟
+            //响应回来的数据，带有响应头的
             Response rs= conn.execute();
 
-            getList(rs.body());
 //            System.out.println(rs.body());
+            //解析响应回来的网页
+            getList(rs.body());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,7 +49,7 @@ public class test22{
         //之后用到的节奏和jquery差不多
         Document d1 =Jsoup.parse(body);
 
-        Elements list1 = d1.select("div.area-half.left>div.tabBox>div.tabContents").get(0).select("table>tbody>tr>td>a");;
+        Elements list1 = d1.select("div.area-half.left>div.tabBox>div.tabContents").get(0).select("table>tbody>tr>td>a");
 //    	Elements list2 = list1.get(1).select("");
         int i=0;
         for(Element link :list1){
@@ -67,7 +68,6 @@ public class test22{
         String json1 = "{\"user\":[{\"name\":\"张三\",\"age\":12},{\"name\":\"张四\",\"age\":13}]}";
 
         JSONObject j1 = JSONObject.fromObject(json1);
-
         JSONArray list1 = j1.getJSONArray("user");
         for (int  a=0 ;a<list1.size();a++){
             JSONObject obj = list1.getJSONObject(a);

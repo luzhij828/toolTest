@@ -23,25 +23,25 @@ public class getBaidu {
 //        getDom1();
         //测试选择器1
         //选择器2是组合
-        getSelect2();
+//        getSelect2();
 
 
         //下载网页中的图片
-//        getIMG();
+        getIMG();
 
     }
     public static void getIMG() {
         try {
             String url = "https://www.baidu.com";
-            Document conn = Jsoup.connect(url).header("","").get();
+            Document conn = Jsoup.connect(url).get();
 
             Elements list = conn.select("img");
 
             for (Element img:list){
-                String imgurl = img.attr("src");
+                String imgurl = img.attr("abs:src");
                 String name = imgurl.substring(imgurl.lastIndexOf("/")+1);
                 System.out.println("图片地址"+imgurl);
-                download(imgurl,name);
+//                download(imgurl,name);
             }
         } catch (IOException e) {
             e.printStackTrace();

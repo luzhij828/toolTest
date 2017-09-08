@@ -15,6 +15,7 @@ import java.util.Map;
  * Created by luzhijie on 2017/8/24.
  */
 public class abmLogin {
+
     static Map<String,String> cookie = new HashMap<>();
     static Map<String,String> data1 = new HashMap<>();
 
@@ -22,8 +23,10 @@ public class abmLogin {
         //登录内网奥霸码
         //第一次请求---加载登录页面获得一部分cookie，和参数
         String url1 = "http://172.16.248.4/user/login";
+
         Connection conn1 = Jsoup.connect(url1).method(Method.GET).ignoreContentType(true);
 
+        conn1.header("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         conn1.header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0");
 
         //发送请求获得响应信息

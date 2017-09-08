@@ -13,15 +13,17 @@ import java.io.*;
  * Created by luzhijie on 2017/9/4.
  */
 public class getZHJMH {
+
     static String zhangjie = "";
-    static String path = "H:\\游戏\\zhenhunjie\\";
+    static String path = "F:\\XZTEST\\";
+
     public static void main(String[] args) {
         //这里便是一个兴趣实例，将一整部漫画下载下来，
         //漫画网站一般为了流量只支持在线阅读。
-        //还有一个意外发现，我们可以“绕过”这个网站的VIP--（相当于他们网站漏洞吧）
+        //还有一个意外发现，我们可以“绕过”这个网站的VIP--（是他们网站漏洞）
 
-        //目前章节只是到了195
-        for (int i=194;i<195;i++) {
+        //目前章节只是到了194
+        for (int i=1;i<3;i++) {
             String url = "http://www.migudm.cn/opus/webQueryWatchOpusInfo.html?hwOpusId=000000014934&index="+i+"&opusType=2";
             Connection conn = Jsoup.connect(url).ignoreContentType(true).method(Method.GET).timeout(6000);
 
@@ -43,7 +45,7 @@ public class getZHJMH {
         JSONArray list1 = j1.getJSONObject("data").getJSONArray("jpgList");
         zhangjie = path+j1.getJSONObject("data").getJSONObject("info").getString("itemName");
 
-//        System.out.println("zhangjie:::"+zhangjie);
+//        System.out.println("zhangjie:"+zhangjie);
 
         if(zhangjie!=null||!(zhangjie.equals(""))){
             File file1 = new File(zhangjie);
@@ -53,16 +55,21 @@ public class getZHJMH {
         }
         for (int  a=0 ;a<list1.size();a++){
             JSONObject obj = list1.getJSONObject(a);
+            //文件名
             String imgname = obj.getString("fileName");
+            //文件地址
             String imgurl = obj.getString("url");
-            System.out.println(imgname+imgurl);
+            System.out.println(imgname+"    "+imgurl);
+
+            //下载文件
             getImg(imgurl,imgname);
 
         }
 
 
     }
-//将图片下载到本地
+
+    //将图片下载到本地
     public static void getImg(String imgurl ,String imgname){
         try {
             File file = new File(zhangjie+"\\"+imgname);
