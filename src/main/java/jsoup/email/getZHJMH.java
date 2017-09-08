@@ -22,7 +22,6 @@ public class getZHJMH {
         //漫画网站一般为了流量只支持在线阅读。
         //还有一个意外发现，我们可以“绕过”这个网站的VIP--（是他们网站漏洞）
 
-
         //目前章节只是到了194
         for (int i=193;i<195;i++) {
             String url = "http://www.migudm.cn/opus/webQueryWatchOpusInfo.html?hwOpusId=000000014934&index="+i+"&opusType=2";
