@@ -26,6 +26,7 @@ public class DataBaseDemo {
         try {
             Connection conn = DriverManager.getConnection(dbURL, user, password);
 
+
             PreparedStatement statement = conn.prepareStatement("INSERT INTO " +
                     "ProxyPool (IPAddress, IPPort, serverAddress, IPType, IPSpeed)" +
                     " VALUES (?, ?, ?, ?, ?)");
