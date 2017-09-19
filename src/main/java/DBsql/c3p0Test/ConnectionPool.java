@@ -1,4 +1,4 @@
-package c3p0Test;
+package DBsql.c3p0Test;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -13,6 +13,7 @@ public class ConnectionPool {
     private static ConnectionPool pool;
     //构造函数
     private ConnectionPool() {
+
         ds = new ComboPooledDataSource();
     }
     public static  final  ConnectionPool getInstance(){

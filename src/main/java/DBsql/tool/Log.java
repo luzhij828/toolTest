@@ -1,4 +1,4 @@
-package tool;
+package DBsql.tool;
 
 public class Log {
 

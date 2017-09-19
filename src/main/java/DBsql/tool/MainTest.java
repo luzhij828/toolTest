@@ -1,4 +1,8 @@
-package tool;
+package DBsql.tool;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
@@ -10,6 +14,7 @@ public class MainTest {
     DBImpl db;
 
 
+    @Before
     public void before(){
 
         String url = "";
@@ -21,6 +26,7 @@ public class MainTest {
             //使用反射将配置文件中的参数读取出来，应该是这样写吧
             Properties properties= new Properties();
             properties.load(new FileInputStream("build/resources/main/param1.properties"));
+
 
             url = properties.getProperty("url");
             user = properties.getProperty("user");
@@ -36,7 +42,7 @@ public class MainTest {
 
     }
 
-
+@Test
     public void TestSqlite() throws Exception{
         ResultSet result = db.queryAll("select name from simple_user");
         while(result.next()){
@@ -45,8 +51,9 @@ public class MainTest {
         Log.log("###########finish#############");
     }
 
-
+@After
     public void after(){
+
         db.close();
     }
 

@@ -1,14 +1,11 @@
-package demo.index;
+package DBsql.index;
 
 import com.mysql.jdbc.Connection;
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
-import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 /**
  * Created by luzhijie on 2017/8/15.

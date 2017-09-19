@@ -1,4 +1,4 @@
-package c3p0Test;
+package DBsql.c3p0Test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import java.sql.SQLException;
  * Created by luzhijie on 2017/8/17.
  */
 public class C3Test {
+
     public static void main(String[] args) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection conn=null;

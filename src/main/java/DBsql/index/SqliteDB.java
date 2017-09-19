@@ -1,4 +1,4 @@
-package demo.index;
+package DBsql.index;
 
 import java.sql.*;
 

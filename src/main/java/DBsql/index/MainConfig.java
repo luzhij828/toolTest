@@ -1,12 +1,4 @@
-package demo.index;
-
-import com.mysql.jdbc.Connection;
-
-
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.text.Normalizer;
+package DBsql.index;
 
 /**
  * Created by luzhijie on 2017/8/15.
